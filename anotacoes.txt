@@ -1,0 +1,63 @@
+
+https://grok.com/share/bGVnYWN5_efe194b1-e464-4fae-82fa-c7355ba03cb8
+
+1. O que é Java? (JVM, JRE, JDK)
+	É uma linguagem de programação fortemente tipada. Orientada a Objetos (classes).
+	
+	JVM (Java Virtual Machine): 
+		É a máquina virtual responsável por executar programas escritos em JAVA. Compila o JAVA para Bytecode.
+		
+	JRE (Java Runtime Environment): 
+		É o ambiente necessario para executar um programa Java, apenas para consumo, exemplo: Minecraft, para rodar o game é necessario Java.
+		✔ JRE = JVM + Bibliotecas Padrão
+		✔ Se você só quer rodar programas Java, basta o JRE.
+		✔ Se quer desenvolver em Java, precisa do JDK, que já inclui o JRE.
+		
+		
+	JDK (Java Development Kit):
+		É o kit de desenvolvimento usado para programar em Java para quem realmente quer desenvolver na linguagem.
+		
+		Ferramentas que vem:
+			javac → Compilador Java
+			java → Executa programas Java
+			jdb → Depurador Java
+			jar → Ferramenta para empacotar arquivos
+			javadoc → Gera documentação automática
+					
+	RESUMO:
+		- JVM Máquina Virtual Java, executa Bytecode.
+		Apenas execução do código.
+		Todos os usuários de Java.
+		
+		- JRE Ambiente de execução para rodar aplicações Java.
+		JVM + bibliotecas padrão. 
+		Quem quer rodar programas Java.
+		
+		- JDK Kit de Desenvolvimento Java.
+		JRE + compilador (javac) + ferramentas de desenvolvimento.
+		Quem quer desenvolver aplicações Java.
+
+2. Criando Projeto Java.
+	Quando estamos em uma IDE dedica a Java e vamos a criar um novo projeto, podemos ver que ira ter tipos de "Build System", 
+	são ferramentas de automação de construção (build automation tools) usadas para gerenciar dependências, compilar código, 
+	executar testes e empacotar aplicativos.
+	Como se fosse o MVC do Java.
+
+	Dentre eles temos o Maven e o Gradle como principais.
+	Maven mais simples e mais utilizando no geral.
+	Gradle mais complicadinho, pois é utilizado mais para mobile e para programar em Kotlin.
+
+	Quando Maven ele cria consigo um arquivo de configurações e dependências do sistema o "pom.xml", em questão conceitual se 
+	assemelha ao o package.json de projetos Node Js.
+
+	meu-projeto/
+├── src/
+│   ├── main/
+│   │   ├── java/         (código fonte)
+│   │   │   └── com/
+│   │   │       └── minhaempresa/
+│   │   │           └── Main.java
+│   │   └── resources/    (arquivos estáticos, como configs)
+│   └── test/             (testes unitários)
+└── pom.xml               (dependências e configurações)
+
