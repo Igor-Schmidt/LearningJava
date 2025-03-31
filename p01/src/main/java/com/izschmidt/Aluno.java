@@ -15,7 +15,6 @@ public class Aluno extends Pessoa {
         super(nome, idade);
     }
 
-    public boolean verificarPeriodo(int periodo) {
-
-    }
+    // public boolean verificarPeriodo(int periodo) {
+    // }
 }
