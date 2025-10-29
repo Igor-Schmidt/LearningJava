@@ -1,4 +1,5 @@
 // Aluno: Igor Zafriel Schmidt
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -30,10 +31,14 @@ public class Construtech {
         System.out.println("Projeto " + projeto.getId() + " cadastrado com sucesso.");
     }
 
+    public List<Projeto> getProjetos() {
+        return projetos;
+    }
+
     public void emitirRelatorio(IRelatorio relatorio) {
         relatorio.gerar(projetos, profissionais);
     }
-    
+
     public Set<Profissional> getProfissionais() {
         return profissionais;
     }

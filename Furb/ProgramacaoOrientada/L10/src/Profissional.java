@@ -19,6 +19,18 @@ public class Profissional {
         this.nome = nome;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public String getId() {
         return id;
     }

@@ -11,6 +11,14 @@ public class EmpreendimentoPrivado extends Projeto {
         this.metragem = metragem;
     }
 
+    public void setTipoArea(TipoArea tipoArea) {
+        this.tipoArea = tipoArea;
+    }
+
+    public void setMetragem(double metragem) {
+        this.metragem = metragem;
+    }
+
     public TipoArea getTipoArea() {
         return tipoArea;
     }

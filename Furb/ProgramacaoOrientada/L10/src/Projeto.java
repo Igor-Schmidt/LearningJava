@@ -20,9 +20,31 @@ public abstract class Projeto {
     }
 
     public void adicionarResponsavel(Profissional profissional) {
+        for (Profissional p : this.responsaveis) {
+            if (profissional.equals(p)) {
+                throw new IllegalArgumentException(String.format("Esse profissional já um responsável do projeto: %s", this.getId()));
+            }
+        }
+
         if (profissional != null) {
             this.responsaveis.add(profissional);
         }
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setDataEntrada(LocalDate dataEntrada) {
+        this.dataEntrada = dataEntrada;
+    }
+
+    public void setResponsaveis(Set<Profissional> responsaveis) {
+        this.responsaveis = responsaveis;
     }
 
     public String getId() {

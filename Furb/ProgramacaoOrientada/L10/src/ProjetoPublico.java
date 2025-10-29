@@ -31,8 +31,16 @@ public class ProjetoPublico extends Projeto {
         return dataFim;
     }
 
+    public void setDataInicio(LocalDate dataInicio) {
+        this.dataInicio = dataInicio;
+    }
+
+    public void setDataFim(LocalDate dataFim) {
+        this.dataFim = dataFim;
+    }
+
     @Override
     public String getResumo() {
-        return String.format("Projeto Público: %s (Duração: %d dias)", getDescricao(), getDuracaoEmDias());
+        return String.format("Projeto Público %s: %s (Duração: %d dias)", getId(), getDescricao(), getDuracaoEmDias());
     }
 }

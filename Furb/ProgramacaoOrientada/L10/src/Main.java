@@ -1,4 +1,5 @@
 // Aluno: Igor Zafriel Schmidt
+
 import java.time.LocalDate;
 import java.util.Optional;
 
@@ -31,41 +32,23 @@ public class Main {
     }
 
     private static void cadastrarProjetos(Construtech sistema) {
-        Optional<Profissional> joao = sistema.getProfissionais().stream().filter(p -> p.getId().equals("ENG01"))
-                .findFirst();
-        Optional<Profissional> maria = sistema.getProfissionais().stream().filter(p -> p.getId().equals("ARQ01"))
-                .findFirst();
-        Optional<Profissional> carlos = sistema.getProfissionais().stream().filter(p -> p.getId().equals("ENG02"))
-                .findFirst();
+        Optional<Profissional> joao = sistema.getProfissionais().stream().filter(p -> p.getId().equals("ENG01")).findFirst();
+        Optional<Profissional> maria = sistema.getProfissionais().stream().filter(p -> p.getId().equals("ARQ01")).findFirst();
+        Optional<Profissional> carlos = sistema.getProfissionais().stream().filter(p -> p.getId().equals("ENG02")).findFirst();
 
         // Projeto Público 1
-        ProjetoPublico projPub1 = new ProjetoPublico(
-                "PUB001",
-                "Construção da Ponte Central",
-                LocalDate.of(2023, 1, 15),
-                LocalDate.of(2023, 3, 1),
-                LocalDate.of(2024, 8, 31));
+        ProjetoPublico projPub1 = new ProjetoPublico("PUB001", "Construção da Ponte Central", LocalDate.of(2023, 1, 15), LocalDate.of(2023, 3, 1), LocalDate.of(2024, 8, 31));
         joao.ifPresent(projPub1::adicionarResponsavel);
         carlos.ifPresent(projPub1::adicionarResponsavel);
         sistema.cadastrarProjeto(projPub1);
 
         // Empreendimento Privado 1
-        EmpreendimentoPrivado empPriv1 = new EmpreendimentoPrivado(
-                "PRIV001",
-                "Condomínio Residencial Flores",
-                LocalDate.of(2023, 2, 20),
-                TipoArea.URBANA,
-                15000.0);
+        EmpreendimentoPrivado empPriv1 = new EmpreendimentoPrivado("PRIV001", "Condomínio Residencial Flores", LocalDate.of(2023, 2, 20), TipoArea.URBANA, 15000.0);
         maria.ifPresent(empPriv1::adicionarResponsavel);
         sistema.cadastrarProjeto(empPriv1);
 
         // Projeto Público 2
-        ProjetoPublico projPub2 = new ProjetoPublico(
-                "PUB002",
-                "Reforma do Hospital Municipal",
-                LocalDate.of(2023, 5, 10),
-                LocalDate.of(2023, 6, 1),
-                LocalDate.of(2023, 12, 20));
+        ProjetoPublico projPub2 = new ProjetoPublico("PUB002", "Reforma do Hospital Municipal", LocalDate.of(2023, 5, 10), LocalDate.of(2023, 6, 1), LocalDate.of(2023, 12, 20));
         carlos.ifPresent(projPub2::adicionarResponsavel);
         sistema.cadastrarProjeto(projPub2);
     }
