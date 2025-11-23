@@ -19,10 +19,7 @@ public class MapaDispersao<T> {
 
         NoMapa<T> noMapa = new NoMapa<>(chave, dado);
         if (lista.buscar(noMapa) != null) {
-            // Opcional: Lançar exceção ou atualizar valor
-            // Por simplicidade, vamos permitir duplicados na lista,
-            // mas a busca retornará o primeiro encontrado.
-            // Para evitar duplicados, seria necessário um `buscar` e `remover` antes de inserir.
+            throw new IllegalArgumentException("Essa infomação ja foi adionada!");
         }
         lista.inserir(noMapa);
     }
@@ -30,7 +27,7 @@ public class MapaDispersao<T> {
     public void remover(int chave) {
         int indice = calcularHash(chave);
         ListaEncadeada<NoMapa<T>> lista = info[indice];
-        NoMapa<T> noBusca = new NoMapa<>(chave, null); // `valor` não importa para o `equals`
+        NoMapa<T> noBusca = new NoMapa<>(chave, null);
         lista.retirar(noBusca);
     }
 
